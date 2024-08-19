@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Index.css') }}">
+    <title>ESP32-CAM Inference</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="nav-brand">Fire detection</a>
+            <ul class="nav-links">
+                <li><a href="/">Tổng quan</a></li>
+                <li><a href="/uploads/images">Hình ảnh đã dự đoán</a></li>
+                <li><a href="/uploads/videos">Video đã dự đoán</a></li>
+                <li><a href="/detected_frames">Real time inference</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <main>
+            <h1>ESP32-CAM Inference</h1>
+            <p>Hệ thống dự đoán đám cháy sử dụng ESP32 là một giải pháp tiên tiến kết hợp IoT và thuật toán học máy để phát hiện sớm nguy cơ hỏa hoạn. Với khả năng thu thập và xử lý dữ liệu từ các cảm biến khói, nhiệt độ và độ ẩm, ESP32 cung cấp cảnh báo kịp thời, giúp giảm thiệt hại và bảo vệ an toàn cho con người.</p>
+            <button onclick="location.href='/inference'">Inference over Image/Video</button>
+            <button onclick="location.href='/camera'">Inference over Camera</button>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ESP32-CAM Project. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

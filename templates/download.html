@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/download.css') }}">
+    <title>Download Processed Video</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="nav-brand">Fire detection</a>
+            <ul class="nav-links">
+                <li><a href="/">Tổng quan</a></li>
+                <li><a href="/uploads/images">Hình ảnh đã dự đoán</a></li>
+                <li><a href="/uploads/videos">Video đã dự đoán</a></li>
+                <li><a href="/detected_frames">Real time inference</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <h1>Video Processed Successfully</h1>
+            <div class="download">
+                <h2>Download Processed Video:</h2>
+                <a href="{{ url_for('download_file', filename=video_name) }}">Download Video</a>
+            </div>
+        </main>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 ESP32-CAM Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>

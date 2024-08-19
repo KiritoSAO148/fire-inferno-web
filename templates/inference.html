@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inference.css') }}">
+    <title>Fire Detection</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="nav-brand">Fire detection</a>
+            <ul class="nav-links">
+                <li><a href="/">Tổng quan</a></li>
+                <li><a href="/uploads/images">Hình ảnh đã dự đoán</a></li>
+                <li><a href="/uploads/videos">Video đã dự đoán</a></li>
+                <li><a href="/detected_frames">Real time inference</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <h1>Fire Detection</h1>
+            <form action="/inference" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*,video/*">
+                <input type="submit" value="Upload">
+            </form>
+            <form action="{{url_for('upload')}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="video" accept=".mp4">
+                <input type="submit" value="Upload Video">
+            </form>
+        </main>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 ESP32-CAM Project. All rights reserved.</p>
+    </footer>
+<!--    <button onclick="location.href='/'">Back to Home</button>-->
+</body>
+</html>

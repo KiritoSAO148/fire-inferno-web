@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detected_frames.css') }}">
+    <title>Detected Frames</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="nav-brand">Fire detection</a>
+            <ul class="nav-links">
+                <li><a href="/">Tổng quan</a></li>
+                <li><a href="/uploads/images">Hình ảnh đã dự đoán</a></li>
+                <li><a href="/uploads/videos">Video đã dự đoán</a></li>
+                <li><a href="/detected_frames">Real time inference</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button onclick="location.href='/camera'">Back</button>
+        <h1>Detected Frames</h1>
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Time</th>
+            </tr>
+             {% for id, timestamp, frame in frames %}
+            <tr>
+                <td><img src="data:image/jpeg;base64,{{ frame }}" alt="Detected Frame"></td>
+                <td>{{ timestamp }}</td>
+            </tr>
+             {% endfor %}
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 ESP32-CAM Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>
